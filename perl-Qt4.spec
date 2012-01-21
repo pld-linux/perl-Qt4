@@ -1,7 +1,7 @@
 
 %define         _state          stable
 %define         orgname         perlqt
-%define         qtver           4.7.4
+%define         qtver           4.8.0
 
 # Conditional build:
 %bcond_with	tests		# do not perform "make test"
@@ -11,14 +11,14 @@
 Summary:	Qt4 - A Perl module interface to Qt4
 Summary(pl.UTF-8):	Qt4 - interfejs Perla do Qt4
 Name:		perl-Qt4
-Version:	4.7.3
+Version:	4.8.0
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	cd13db20c7d3c93d837430a0370b30f1
+# Source0-md5:	b9a419ba264d12fa89a3fb0da5e9fa57
 URL:		http://www.kde.org/
-BuildRequires:	smokeqt-devel >= %{version}
+BuildRequires:	kde4-smokeqt-devel >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
