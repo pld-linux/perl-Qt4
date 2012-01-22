@@ -27,6 +27,18 @@ This module provides bindings to the Qt 4 libraries for Perl.
 %description -l pl.UTF-8
 Moduł dostarcza dowiązania do Qt 4 dla Perla.
 
+%package devel
+Summary:	Header file for  perl Qt 4
+Summary(pl.UTF-8):	Plik nagłówkowe perl Qt 4
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description devel
+Header files for perl Qt 4.
+
+%description devel -l pl.UTF-8
+Plik nagłówkoww perl Qt 4.
+
 # which package provides this?
 %define		_noautoreq	'perl(Qt::_internal)'
 
@@ -59,7 +71,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/prcc4_bin
 %attr(755,root,root) %{_bindir}/puic4
 %attr(755,root,root) %{_bindir}/qdbusxml2perl
-%{_includedir}/perlqt
 %{perl_vendorarch}/*.pm
 %dir %{perl_vendorarch}/QtCore4
 %{perl_vendorarch}/QtCore4/*.pm
@@ -67,5 +78,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/*
 %attr(755,root,root) %{perl_vendorarch}/auto/*/*.so
 %dir %{_datadir}/perlqt
-%{_datadir}/perlqt/cmake
 %attr(755,root,root) %{_datadir}/perlqt/doxsubpp.pl
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/perlqt
+%{_datadir}/perlqt/cmake
