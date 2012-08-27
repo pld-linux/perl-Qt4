@@ -11,12 +11,12 @@
 Summary:	Qt4 - A Perl module interface to Qt4
 Summary(pl.UTF-8):	Qt4 - interfejs Perla do Qt4
 Name:		perl-Qt4
-Version:	4.8.0
-Release:	2
+Version:	4.9.0
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	b9a419ba264d12fa89a3fb0da5e9fa57
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
+# Source0-md5:	ef513d388d381091b316d3a05c2a7069
 URL:		http://www.kde.org/
 BuildRequires:	kde4-smokeqt-devel >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
