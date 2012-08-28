@@ -1,13 +1,12 @@
-
 %define         _state          stable
 %define         orgname         perlqt
 %define         qtver           4.8.0
 
 # Conditional build:
 %bcond_with	tests		# do not perform "make test"
-#
-%include	/usr/lib/rpm/macros.perl
+
 %define	pdir	PerlQt
+%include	/usr/lib/rpm/macros.perl
 Summary:	Qt4 - A Perl module interface to Qt4
 Summary(pl.UTF-8):	Qt4 - interfejs Perla do Qt4
 Name:		perl-Qt4
@@ -19,6 +18,8 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 # Source0-md5:	ef513d388d381091b316d3a05c2a7069
 URL:		http://www.kde.org/
 BuildRequires:	kde4-smokeqt-devel >= %{version}
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,8 +40,8 @@ Header files for perl Qt 4.
 %description devel -l pl.UTF-8
 Plik nagłówkoww perl Qt 4.
 
-# which package provides this?
 %define		_noautoreq	'perl(Qt::_internal)'
+# which package provides this?
 
 %prep
 %setup -q -n %{orgname}-%{version}
@@ -55,16 +56,15 @@ cd build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-%{__make} -C build/ install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	kde_htmldir=%{_kdedocdir}
+%{__make} -C build install \
+	kde_htmldir=%{_kdedocdir} \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
