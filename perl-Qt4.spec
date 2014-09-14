@@ -17,6 +17,7 @@ Group:		Development/Languages/Perl
 Source0:	http://download.kde.org/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
 # Source0-md5:	0f4cd244ab4d5ad9b6727334eb513fcc
 URL:		http://www.kde.org/
+BuildRequires:	QtXmlPatterns-devel
 BuildRequires:	kde4-smokeqt-devel >= %{version}
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
