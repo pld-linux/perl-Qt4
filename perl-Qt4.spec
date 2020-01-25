@@ -6,7 +6,6 @@
 %bcond_with	tests		# do not perform "make test"
 
 %define	pdir	PerlQt
-%include	/usr/lib/rpm/macros.perl
 Summary:	Qt4 - A Perl module interface to Qt4
 Summary(pl.UTF-8):	Qt4 - interfejs Perla do Qt4
 Name:		perl-Qt4
